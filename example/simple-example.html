@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../dist/smartbutton.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../src/smartbutton.js"></script>
+    <script>
+        $(function() {
+            $("#smart-button").smartbutton([ {
+                title : "Tokyo",
+                value : 180,
+                color : "red"
+            }, {
+                title : "San Francisco",
+                value : 60,
+                color : "yellow"
+            }, {
+                title : "London",
+                value : 50,
+                color : "green"
+            }, {
+                title : "New York",
+                value : 30,
+                color : "blue"
+            }, {
+                title : "New York",
+                value : 30,
+                color : "pink"
+            }, {
+                title : "New York",
+                value : 30,
+                color : "lightblue"
+            } ]);
+        });
+    </script>
+</head>
+<body>
+<div id="smart-button" style="width:200px; height: 200px;"></div>
+</body>
+</html>
