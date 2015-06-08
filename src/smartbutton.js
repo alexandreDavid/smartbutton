@@ -23,6 +23,23 @@
         midPart.setAttribute("fill", "black");
         midPart.setAttribute("class", "smartbutton-center");
         svg.appendChild(midPart);
+        var mouseup = false;
+        $(svg).mousedown(function() {
+            mouseup = true;
+            midPart.setAttribute("class", "smartbutton-center-mouseup");
+        }).mouseleave(function() {
+            midPart.setAttribute("class", "smartbutton-center");
+            midPart.setAttribute("fill", "black");
+        });
+        $(document).mouseup(function() {
+            if (mouseup) {
+                midPart.setAttribute("class", "smartbutton-center");
+                mouseup = false;
+            }
+        });
+        $('.smartbutton-segment').mouseover(function() {
+            midPart.setAttribute('fill', this.getAttribute('fill'));
+        });
     
         function drawPieSegments (animationDecimal) {
           var startRadius = 0;
@@ -47,6 +64,7 @@
             var segment = document.createElementNS("http://www.w3.org/2000/svg", 'path');
             segment.setAttribute("d", cmd.join(' '));
             segment.setAttribute('fill', data[i].color);
+            segment.setAttribute("class", "smartbutton-segment");
             svg.appendChild(segment);
             startRadius += segmentAngle;
           }

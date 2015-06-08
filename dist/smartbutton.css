@@ -5,3 +5,7 @@
 .smartbutton:hover .smartbutton-center {
     transform: translate(30%, 30%) scale(0.5,0.5);
 }
+
+.smartbutton .smartbutton-center-mouseup {
+    transform: translate(30%, 30%) scale(0.5,0.5);
+}
